@@ -30,7 +30,7 @@
             error: {
                 duration: 5000,
                 enabled: true,
-                class: 'danger'
+                class: 'error'
             },
             success: {
                 duration: 5000,
@@ -191,15 +191,15 @@
                 },
 
                 error: function (title, content, userData, duration) {
-                    return this.notify('error', 'error', title, content, userData, duration);
+                    return this.notify('error', 'times', title, content, userData, duration);
                 },
 
                 success: function (title, content, userData, duration) {
-                    return this.notify('success', 'success', title, content, userData, duration);
+                    return this.notify('success', 'check', title, content, userData, duration);
                 },
 
                 warning: function (title, content, userData, duration) {
-                    return this.notify('warning', 'warning', title, content, userData, duration);
+                    return this.notify('warning', 'info', title, content, userData, duration);
                 },
 
                 notify: function (type, icon, title, content, userData, duration) {
@@ -267,13 +267,19 @@
                 if (!$templateCache.get('ng-notification-template')) {
                     $templateCache.put('ng-notification-template',
                         '<div class="ng-notification-wrapper" ng-repeat="noti in queue">' +
-                        '<div class="ng-notification alert alert-{{noti.class}}">' +
-                        '<div class="ng-notification-content">' +
-                        '<button type="button" class="close" data-dismiss="modal" ng-click="removeNotification(noti)">'+
-                        '<span aria-hidden="true">×</span><span class="sr-only">Close</span></button>' +
-                        '<span class="title" ng-bind="noti.title"></span>' +
-                        '</div>' +
-                        '</div>' +
+                          '<div class="ng-notification-close-btn" ng-click="removeNotification(noti)">' +
+                            '<i class="fa fa-times"></i>' +
+                          '</div>' +
+                          '<div class="ng-notification">' +
+                            '<div class="ng-notification-image ng-notification-type-{{noti.class}}" ng-switch on="noti.image">' +
+                              '<i class="fa fa-{{noti.icon}}" ng-switch-when="false"></i>' +
+                              '<img ng-src="{{noti.image}}" ng-switch-default />' +
+                            '</div>' +
+                            '<div class="ng-notification-content">' +
+                              '<h3 class="ng-notification-title">{{noti.title}}</h3>' +
+                              '<p class="ng-notification-text" ng-bind-html="noti.content"></p>' +
+                            '</div>' +
+                          '</div>' +
                         '</div>'
                     );
                 }
