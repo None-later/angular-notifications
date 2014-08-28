@@ -19,27 +19,33 @@
         var settings = {
             info: {
                 duration: 5000,
-                enabled: true
+                enabled: true,
+                class: 'info'
             },
             warning: {
                 duration: 5000,
-                enabled: true
+                enabled: true,
+                class: 'warning'
             },
             error: {
                 duration: 5000,
-                enabled: true
+                enabled: true,
+                class: 'danger'
             },
             success: {
                 duration: 5000,
-                enabled: true
+                enabled: true,
+                class: 'success'
             },
             progress: {
                 duration: 0,
-                enabled: true
+                enabled: true,
+                class: ''
             },
             custom: {
                 duration: 35000,
-                enabled: true
+                enabled: true,
+                class: ''
             },
             details: true,
             localStorage: false,
@@ -209,7 +215,8 @@
                         'content': content,
                         'timestamp': +new Date(),
                         'userData': userData,
-                        'duration': duration
+                        'duration': duration,
+                        'class': settings[type].class
                     };
                     notifications.push(notification);
 
@@ -260,7 +267,7 @@
                 if (!$templateCache.get('ng-notification-template')) {
                     $templateCache.put('ng-notification-template',
                         '<div class="ng-notification-wrapper" ng-repeat="noti in queue">' +
-                        '<div class="ng-notification alert alert-{{noti.type}}">' +
+                        '<div class="ng-notification alert alert-{{noti.class}}">' +
                         '<div class="ng-notification-content">' +
                         '<button type="button" class="close" data-dismiss="modal" ng-click="removeNotification(noti)">'+
                         '<span aria-hidden="true">×</span><span class="sr-only">Close</span></button>' +
