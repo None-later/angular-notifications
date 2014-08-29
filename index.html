@@ -4,7 +4,7 @@
     <title>Demo Page</title>
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
     <link rel="stylesheet" href="font-awesome.min.css">
-    <link rel="stylesheet" href="notification.min.css">
+    <link rel="stylesheet" href="dist/notification.min.css">
     <link rel="stylesheet" href="docs.css">
     <style>
 
@@ -30,6 +30,8 @@
         <input type="text" ng-model="notiTitle">
         <label for="">Notification Content</label>
         <input type="text" ng-model="notiText">
+        <label for="">Duration (milliseconds)</label>
+        <input type="text" ng-model="notiDuration">
         <br>
         <label for="">Create a Notification</label>
         <div class="btn-group">
@@ -50,7 +52,7 @@
     </div>
 
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.1.5/angular.min.js"></script>
-    <script src="notification.js"></script>
+    <script src="dist/notification.js"></script>
     <script src="app.js"></script>
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
