@@ -3,9 +3,9 @@
   <head>
     <title>Demo Page</title>
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="font-awesome.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="dist/notification.css">
-    <link rel="stylesheet" href="docs.css">
+    <link rel="stylesheet" href="css/docs.css">
     <style>
 
     </style>
@@ -30,8 +30,9 @@
         <input type="text" ng-model="notiTitle">
         <label for="">Notification Content</label>
         <input type="text" ng-model="notiText">
-        <label for="">Duration (milliseconds)</label>
-        <input type="text" ng-model="notiDuration">
+        <label for="">Duration</label>
+        <select ng-options="duration.name for duration in availableDurations track by duration.value" ng-model="notiDuration">
+        </select>
         <br>
         <label for="">Create a Notification</label>
         <div class="btn-group">
