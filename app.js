@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('demo', ['notifications']).
+angular.module('demo', ['ngSanitize', 'notifications']).
   controller('MainCtrl', function($scope, $notification, $timeout){
     console.log('main ctrl started');
     $timeout(function(){
