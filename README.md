@@ -5,7 +5,9 @@
 ### Dependencies
 
 - Bootstrap
+- Font Awesome
 - AngularJS >= 1.2.x
+- Angular Sanitize
 
 ### Installation
 After you've downloaded this repository, include both the css and javascript file
@@ -52,7 +54,7 @@ notifications by specifying an image to display in the notification.
 
 ### HTML5 Notifications
 If you want to use HTML5 notifications with the same API then you can call
-`$notification.enableHtml5Mode()`. 
+`$notification.enableHtml5Mode()`.
 
 **Note:** You will need permissions in
 order to use HTML5 notifications so for this reason you should call `enableHtml5Mode`
@@ -60,7 +62,8 @@ in a click event listener or something.
 
 
 ### Thanks to
-
+ - @DerekRies : https://githhub.com/DerekRies/angular-notifications
+ - @phxdatasec : https://github.com/phxdatasec/angular-notifications
  - @fetrarij : https://github.com/DerekRies/angular-notifications/pull/9
  - @pablocaselas : https://github.com/DerekRies/angular-notifications/issues/7
  - @deltapsilon : https://github.com/DerekRies/angular-notifications/pull/5
